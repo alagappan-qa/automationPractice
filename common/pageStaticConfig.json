@@ -4,8 +4,15 @@
 	"pageURL":"http://automationpractice.com/",
 	"pageTitle":"My Store",
 	"searchTextValid":"dress",
+	"searchTextValidSort":"summer",
 	"searchTextInvalid":"invalid",
 	"noResult":"0 results have been found.",
-	"cartEmpty":"Your shopping cart is empty."
+	"cartEmpty":"Your shopping cart is empty.",
+	"sortValuePriceLow":"price:asc",
+	"createAccountError":"Invalid email address.",
+	"invalidEmailAddress":"emailwithoutaddress",
+	"email":"sample@gmail.com",
+	"password":"1234",
+	"loginWithinvalidCreds":"Invalid password."
 	}
 }

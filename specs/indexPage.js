@@ -31,4 +31,31 @@ it('Remove an item from the Cart', async () => {
 	expect(await PO_automationPractice.fn_RemoveItemFromCart()).toContain(dataJSONPageInfoRead.indexPage.cartEmpty);
 });
 
+it('Click on Category and Sub-Category, then choose an item and add it to cart', async () => {
+	await PO_automationPractice.fn_CategorySelection();
+	await PO_automationPractice.fn_SubCategorySelection();
+	await PO_automationPractice.fn_SubCategoryFirstItemSelection();
+	expect(await PO_automationPractice.fn_SubCategoryFirstItemAddToCart()).toBe(true);
+});
+
+it('Sort using Lowest price first using Drop down', async () => {
+	expect(await PO_automationPractice.fn_dropDownSelectionToSortItems()).toBe(true);
+});
+
+});
+
+describe('Validation of Error messages for invalid login and create Account', () => {
+
+it('Create Account without any email address', async () => {
+	expect(await PO_automationPractice.fn_CreateAccountErrorWithoutEmail()).toContain(dataJSONPageInfoRead.indexPage.createAccountError);
+});
+
+it('Create Account with invalid email address', async () => {
+	expect(await PO_automationPractice.fn_CreateAccountErrorWithInvalidEmail()).toContain(dataJSONPageInfoRead.indexPage.createAccountError);
+});
+
+it('Validate Login for Authentication Error by passing Invalid Credentials', async () => {
+	expect(await PO_automationPractice.fn_SignInvalidationForAuthenticationError()).toContain(dataJSONPageInfoRead.indexPage.loginWithinvalidCreds);
+});
+
 });
